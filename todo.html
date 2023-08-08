@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <script>
+            function assign(){
+                var container=document.getElementById("list-container");
+                var text=document.getElementById("note").value;
+                var list=document.createElement("li");
+                list.innerHTML=text;
+                container.appendChild(list);
+                var btn=document.createElement("span");
+                btn.innerHTML="x";
+                list.appendChild(btn);
+                btn.onclick=function(){
+                    btn.style.display="none";
+                    list.style.display="none";
+                }
+            }
+        </script>
+        <style>
+            body{
+                background:linear-gradient(rgb(232, 106, 67),rgb(218, 79, 20));
+                cursor: pointer;
+                background-image: url("https://tse4.mm.bing.net/th?id=OIP.84IpsZX4Gu7oVqT6QhLilwHaD4&pid=Api&P=0&h=180");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .container{
+                background-color: white;
+                width: 400px;
+                height: fit-content;
+                border-radius: 10px;
+                padding: 10px;
+                position: fixed;
+                margin-left: 200px;
+                margin-top: 150px;
+            }
+            .div-container input{
+                width: 200px;
+                height:30px;
+                border-radius: 10px;
+                background-color: rgb(246, 241, 241);
+            }
+            .div-container button{
+                background-color: rgb(227, 139, 173);
+                color: white;
+                padding: 6px;
+                border-radius: 20px;
+                width: 70px;
+                border: none;
+                outline: none;
+            }
+            .div-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            input{
+                flex: 1;
+                border: none;
+                background: transparent;
+                outline: none;
+                padding: 10px;
+            }
+            .btn:hover{
+                transition: 0.3s;
+                padding: 8px;
+            }
+            li{
+                list-style-type: none;
+                font-size: 23px;
+                padding: 2px;
+            }
+            img{
+                margin-left: 6px;
+                width: 20px;
+            }
+            span{
+                margin-left: 220px;
+                border-radius: 90%;
+                font-size: 39px;
+            }
+            li:hover{
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>To Do List<img src="https://cdn-icons-png.flaticon.com/128/3208/3208615.png" height="24"></h1>
+            <div class="div-container">
+            <input type="text" id="note" placeholder="type here...........">
+            <button onclick="assign()" class="btn">Add</button>
+            </div>
+            <div class="listcon">
+            <ul id="list-container">
+
+            </ul></div>
+        </div>
+    </body>
+</html>
